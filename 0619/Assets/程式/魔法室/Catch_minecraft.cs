@@ -22,19 +22,22 @@ public class Catch_minecraft : MonoBehaviour
       
 		
 	}  
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
-        //state_catch = true;
-        Y_pos.y = Y_num;
-        transform.position += new Vector3(0, Y_pos.y, 0);
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        Debug.Log("TEST");
 
-        if (gameObject.tag == "minecraft")
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            //state_catch = true;
+            Y_pos.y = Y_num;
+            transform.position += new Vector3(0, Y_pos.y, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+
             Score_time.Score_Num += 2;
             Instantiate(show_score, transform.position, transform.rotation);
+
+            GetComponent<AudioSource>().PlayOneShot(catch_sound);
+            Destroy(gameObject, 0.3f);
         }
-        GetComponent<AudioSource>().PlayOneShot(catch_sound);
-        Destroy(gameObject, 0.3f);
     }
 }
