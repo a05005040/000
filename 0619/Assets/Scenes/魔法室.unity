@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catch_sound: {fileID: 8300000, guid: 5d1b490c888d4864fb8cfb86e9761bac, type: 3}
-  show_score: {fileID: 1314132388049146, guid: 10cf22b574d9d0a47a9d692f099bb20d, type: 2}
+  show_score: {fileID: 1145353168968012, guid: 6941ae5817285f945a8ec57d18879b47, type: 2}
   Y_num: 0.5
 --- !u!50 &54857168
 Rigidbody2D:

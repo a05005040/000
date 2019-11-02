@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Score_up : MonoBehaviour
 {
-    public int Up_speed = 3;                      //速度
+    public int Up_speed = 2;                      //速度
 
 	// Use this for initialization
 	void Start ()

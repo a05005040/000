@@ -19,12 +19,12 @@ public class Catch_minecraft : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-      
-		
-	}  
+        Debug.Log(Score_time.Score_Num);
+
+    }  
     private void OnMouseOver()
     {
-        Debug.Log("TEST");
+       
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
