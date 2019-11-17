@@ -7,7 +7,7 @@ public class Inst_minecraft : MonoBehaviour
     public GameObject minecraft;                   //藥水
     public int Sec = 2;
     private Vector3 X_Num,Y_Num;                  //隨機生成
-    private int i;
+    
     // Use this for initialization
     void Start ()
     {
@@ -43,4 +43,6 @@ public class Inst_minecraft : MonoBehaviour
         }
         Instantiate(minecraft, transform.position, transform.rotation);
     }
+   
+
 }

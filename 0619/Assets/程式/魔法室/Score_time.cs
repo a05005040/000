@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Score_time : MonoBehaviour
 {
-    public static int Score_Num;                       //數量
+                       //數量
 
 	// Use this for initialization
 	void Start ()

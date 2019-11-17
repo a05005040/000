@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Catch_minecraft : MonoBehaviour
 {
@@ -8,19 +9,25 @@ public class Catch_minecraft : MonoBehaviour
     public GameObject show_score;                         //動態數量
     public float Y_num = 0.5f;
     private Vector3 Y_pos;
+    public static int get_minecraft = 1000;                   //藥水初始值
+    public static int Score_Num;                            //藥水增加數量
+    public Text get_minecraft_01, get_minecraft_02;         //文字顯示藥水
     //private bool state_catch= false;                      //取得狀態                      
 
     // Use this for initialization
     void Start ()
     {
-		
-	}
+        PlayerPrefs.GetInt(Score_Num.ToString());
+        PlayerPrefs.GetInt(get_minecraft.ToString());
+        
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(Score_time.Score_Num);
-
+        get_minecraft_01.GetComponent<Text>().text = Score_Num.ToString();
+        get_minecraft_02.GetComponent<Text>().text = get_minecraft.ToString();
+        
     }  
     private void OnMouseOver()
     {
@@ -33,11 +40,26 @@ public class Catch_minecraft : MonoBehaviour
             transform.position += new Vector3(0, Y_pos.y, 0);
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
-            Score_time.Score_Num += 2;
+            Get_minecraft();
             Instantiate(show_score, transform.position, transform.rotation);
 
             GetComponent<AudioSource>().PlayOneShot(catch_sound);
             Destroy(gameObject, 0.3f);
         }
+    }
+    /// <summary>
+    /// 藥水數量顯示
+    /// </summary>
+    void Get_minecraft()
+    {
+        Score_Num += 2;
+    }
+    /// <summary>
+    /// 存取魔法藥水顯示
+    /// </summary>
+    void Set_mineceraft()
+    {
+        get_minecraft = Score_Num + get_minecraft;
+        
     }
 }
