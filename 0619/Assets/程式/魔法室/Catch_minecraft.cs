@@ -9,16 +9,16 @@ public class Catch_minecraft : MonoBehaviour
     public GameObject show_score;                         //動態數量
     public float Y_num = 0.5f;
     private Vector3 Y_pos;
-    public static int get_minecraft = 1000;                   //藥水初始值
+    
     public static int Score_Num;                            //藥水增加數量
-    public Text get_minecraft_01, get_minecraft_02;         //文字顯示藥水
+    public Text get_minecraft_01;                           //文字顯示藥水
     //private bool state_catch= false;                      //取得狀態                      
 
     // Use this for initialization
     void Start ()
     {
         PlayerPrefs.GetInt(Score_Num.ToString());
-        PlayerPrefs.GetInt(get_minecraft.ToString());
+       
         
     }
 	
@@ -26,7 +26,7 @@ public class Catch_minecraft : MonoBehaviour
 	void Update ()
     {
         get_minecraft_01.GetComponent<Text>().text = Score_Num.ToString();
-        get_minecraft_02.GetComponent<Text>().text = get_minecraft.ToString();
+      
         
     }  
     private void OnMouseOver()
@@ -53,13 +53,8 @@ public class Catch_minecraft : MonoBehaviour
     void Get_minecraft()
     {
         Score_Num += 2;
-    }
-    /// <summary>
-    /// 存取魔法藥水顯示
-    /// </summary>
-    void Set_mineceraft()
-    {
-        get_minecraft = Score_Num + get_minecraft;
+        get_minecraft_01.text = Score_Num.ToString();
         
     }
+   
 }
