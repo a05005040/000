@@ -17,6 +17,8 @@ public class Catch_minecraft : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+
+        get_minecraft_01 = GameObject.Find("數量").GetComponent<Text>();
         PlayerPrefs.GetInt(Score_Num.ToString());
        
         

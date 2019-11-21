@@ -14,7 +14,7 @@ public class Inst_minecraft : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        InvokeRepeating("SetInterial", 0f,Sec);
+        InvokeRepeating("Ins_Objs", 0f,Sec);
        
     }
 	
