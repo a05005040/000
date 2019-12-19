@@ -36,8 +36,8 @@ public class ItemManager : MonoBehaviour
         Text_03.GetComponent<Text>().text = ItemsCount[2].ToString();
         Text_04.GetComponent<Text>().text = ItemsCount[3].ToString();
 
-        Get_minecraft.GetComponent<Text>().text = minecraft_scroce.ToString();   //藥水
-         Set_mineceraft();
+       
+        
     }
     public void SetIndex(int index)
     {
@@ -50,17 +50,20 @@ public class ItemManager : MonoBehaviour
 
     public void Buy()
     {
-        UIBuy.SetActive(false);
-        if (minecraft_scroce < spice.Length)
+        if (spice[Index] > minecraft_scroce)
         {
             UI_MessageBox.SetActive(true);
+            UIBuy.SetActive(false);
             return;
         }
+
+        UIBuy.SetActive(false);
+       
         ItemsCount[Index]++;
        
         
         minecraft_scroce -= spice[Index];
-
+        Get_minecraft.text = minecraft_scroce.ToString();
     }
 
     public void Cancel()
@@ -84,8 +87,9 @@ public class ItemManager : MonoBehaviour
     void Set_mineceraft()
     {
 
-        minecraft_scroce = minecraft_scroce + Catch_minecraft.Score_Num;
+        //minecraft_scroce = minecraft_scroce + Catch_minecraft.Score_Num;
+        //Get_minecraft.text = minecraft_scroce.ToString();
+   
         Get_minecraft.text = minecraft_scroce.ToString();
-        
     }
 }

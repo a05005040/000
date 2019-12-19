@@ -27,7 +27,7 @@ public class Catch_minecraft : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        get_minecraft_01.GetComponent<Text>().text = Score_Num.ToString();
+        //get_minecraft_01.GetComponent<Text>().text = Score_Num.ToString();
       
         
     }  
@@ -54,9 +54,12 @@ public class Catch_minecraft : MonoBehaviour
     /// </summary>
     void Get_minecraft()
     {
+        //Score_Num += 2;
+        //get_minecraft_01.text = Score_Num.ToString();
         Score_Num += 2;
+        ItemManager.minecraft_scroce += 2;
         get_minecraft_01.text = Score_Num.ToString();
-        
+
     }
    
 }
